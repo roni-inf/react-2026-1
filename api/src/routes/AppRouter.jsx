@@ -36,7 +36,7 @@ export default function AppRouter() {
           }
         />
         <Route
-          path="/more"
+          path="/more/:id"
           element={
             <PrivateRoute>
               <More />

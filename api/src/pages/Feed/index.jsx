@@ -45,7 +45,7 @@ export default function Feed() {
                   </div>
 
                   <div className={styles.btnReadMore}>
-                    <Link to="/more">
+                    <Link to={`/more/${post.id}`}>
                       <button>Leia mais</button>
                     </Link>
                   </div>
