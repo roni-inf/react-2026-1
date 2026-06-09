@@ -3,15 +3,46 @@ import Feed from "../pages/Feed";
 import Post from "../pages/Post";
 import Update from "../pages/Update";
 import More from "../pages/More";
+import Login from "../pages/Login";
+import PrivateRoute from "./PrivateRoute";
 
 export default function AppRouter() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Feed />} />
-        <Route path="/posts" element={<Post />} />
-        <Route path="/update" element={<Update />} />
-        <Route path="/more" element={<More />} />
+        <Route path="/" element={<Login />} />
+        <Route
+          path="/feed"
+          element={
+            <PrivateRoute>
+              <Feed />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/posts"
+          element={
+            <PrivateRoute>
+              <Post />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/update/:id"
+          element={
+            <PrivateRoute>
+              <Update />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/more"
+          element={
+            <PrivateRoute>
+              <More />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </div>
   );

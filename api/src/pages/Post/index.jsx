@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import axios from "axios";
+import api from "../../services/api";
 import { useNavigate } from "react-router-dom";
 
 const validationPost = yup.object().shape({
@@ -32,11 +32,11 @@ export default function Post() {
   } = useForm({ resolver: yupResolver(validationPost) });
 
   const addPost = (data) => {
-    axios
-      .post("http://localhost:8080/posts", data)
+    api
+      .post("/posts", data)
       .then(() =>{
         console.log("Dados enviados");
-        navigate("/");
+        navigate("/feed");
 
       })
       .catch(() => console.log("Erro na requisição"));
@@ -47,7 +47,7 @@ export default function Post() {
       <Header />
 
       <div className={styles.cardPost}>
-        <h2>Criar Postagem</h2>
+        <h1>Criar Postagem</h1>
         <hr />
 
         <div className={styles.cardBodyPost}>

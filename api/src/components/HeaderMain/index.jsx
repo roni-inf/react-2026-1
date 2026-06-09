@@ -6,7 +6,7 @@ export default function HeaderMain() {
       <div className={styles.container}>
         
         <div className={styles.logo}>
-          <h2>Posts</h2>
+          <h1>Posts</h1>
         </div>
 
         <div className={styles.btnNewPost}>

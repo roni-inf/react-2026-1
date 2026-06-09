@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header>
       <div className={styles.container}>
-        <Link to="/">
+        <Link to="/feed">
           <img src={Back} alt="Voltar" style={{ width: "50px" }} />
         </Link>
       </div>
